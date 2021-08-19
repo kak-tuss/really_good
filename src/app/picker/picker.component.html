@@ -8,5 +8,7 @@
         <div class="pickedbox" [ngStyle]="{'background-color': bgColor}">
         </div>
         <input class="formulabox" type="text" [value]="setFormula()" disabled />
+
+        <button (click)="preview($event)">PREVIEW</button>
     </form>
 </div>

@@ -54,7 +54,45 @@
         font-style: normal;
         line-height: normal;
         letter-spacing: normal;
-        color: #000;
+        color: #000000;
         padding-left: 10px;
     }
+
+    .justrewrite {
+        text-transform: lowercase;
+    }
+    button {
+        width: 404px;
+        height: 85px;
+        border: 5px solid #361059;
+        border-radius: 10px;
+        margin-top: 31px;
+        background: linear-gradient(0deg, rgba(112,85,164,1) 0%, rgba(31,30,126,1) 98%);        color: #ffffff;
+        color: #FFFFFF;
+        font-family: Roboto Slab;
+        text-transform: lowercase;
+        text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+        font-size: 28px;
+        line-height: 75px;
+        box-shadow: 3px 3px 7px -4px #000000;
+    }
+    button:after {
+        content: " ";
+        display: block;
+        width: 388px;
+        height: 71px;
+        margin-left: -7px;
+        margin-top: -78px;
+        border: 4px solid #ffffff;
+        border-radius: 7px;
+        background: url('../../assets/hexagonmask.svg') 30px center no-repeat,
+        url('../../assets/hexagonmask.svg') 330px center no-repeat;
+        background-size: 30px, 30px;
+        box-shadow: 2px 3px 3px 0px rgba(0,0,0,0.75) inset;
+        
+    }
+    button::first-letter {
+        text-transform: capitalize;
+    }
+
 }

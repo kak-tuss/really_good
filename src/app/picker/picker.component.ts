@@ -44,10 +44,15 @@ export class PickerComponent implements OnInit, AfterViewInit {
     this.color.lightness = 100 - Math.round((<MouseEvent>e).offsetY / this.pickerHeightLight * 100);
 
     this.bgColor = this.colorService.convertHSLToHex(this.color.hue, this.color.saturation, this.color.lightness);
-    console.log('should be emitting ', this.bgColor);
+  }
+
+  preview(e: Event) {
+    e.preventDefault();
+    console.log('preview');
     this.change.emit(this.bgColor);
   }
 
-  setFormula = () => `hsl(${this.color.hue}, ${this.color.saturation}%, ${this.color.lightness}%)`;
-
+  setFormula() {
+    return `hsl(${this.color.hue}, ${this.color.saturation}%, ${this.color.lightness}%)`;
+  }
 }
