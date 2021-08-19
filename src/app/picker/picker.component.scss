@@ -18,14 +18,17 @@
             }
         }
     }
+
     .pickerbox-main-color {
         background-color: #6633cc;
     
     }
+
     .pickerbox-gradient-saturation {
         background: linear-gradient(to left, hsla(260, 0%, 50%, 1),hsla(260, 20%, 50%, 1),hsla(260, 40%, 50%, 1),hsla(260, 60%, 50%, 1),hsla(260, 80%, 50%, 1),hsla(260, 100%, 50%, 1));
         background: -moz-linear-gradient(left, hsla(260, 0%, 50%, 1),hsla(260, 20%, 50%, 1),hsla(260, 40%, 50%, 1),hsla(260, 60%, 50%, 1),hsla(260, 80%, 50%, 1),hsla(260, 100%, 50%, 1));
     }
+
     .pickerbox-gradient-lightness {
         background: linear-gradient(to bottom, hsla(260, 50%, 100%, 1),hsla(260, 50%, 50%, 0.5),hsla(260, 50%, 0, 1));
         background: -moz-linear-gradient(bottom, hsla(260, 50%, 100%, 1),hsla(260, 50%, 50%, 0.5),hsla(260, 50%, 0, 1));
@@ -58,16 +61,13 @@
         padding-left: 10px;
     }
 
-    .justrewrite {
-        text-transform: lowercase;
-    }
     button {
         width: 404px;
         height: 85px;
         border: 5px solid #361059;
         border-radius: 10px;
         margin-top: 31px;
-        background: linear-gradient(0deg, rgba(112,85,164,1) 0%, rgba(31,30,126,1) 98%);        color: #ffffff;
+        background: linear-gradient(0deg, rgba(112,85,164,1) 0%, rgba(31,30,126,1) 98%);        
         color: #FFFFFF;
         font-family: Roboto Slab;
         text-transform: lowercase;
@@ -76,6 +76,7 @@
         line-height: 75px;
         box-shadow: 3px 3px 7px -4px #000000;
     }
+
     button:after {
         content: " ";
         display: block;
@@ -86,7 +87,7 @@
         border: 4px solid #ffffff;
         border-radius: 7px;
         background: url('../../assets/hexagonmask.svg') 30px center no-repeat,
-        url('../../assets/hexagonmask.svg') 330px center no-repeat;
+                    url('../../assets/hexagonmask.svg') 330px center no-repeat;
         background-size: 30px, 30px;
         box-shadow: 2px 3px 3px 0px rgba(0,0,0,0.75) inset;
         
@@ -94,5 +95,4 @@
     button::first-letter {
         text-transform: capitalize;
     }
-
 }

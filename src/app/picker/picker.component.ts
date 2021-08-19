@@ -12,6 +12,7 @@ export interface HSLColor {
   templateUrl: './picker.component.html',
   styleUrls: ['./picker.component.scss']
 })
+
 export class PickerComponent implements OnInit, AfterViewInit {
   @ViewChild('pickerbox', { static: false }) divPickerbox!: ElementRef;
   @Output() change: EventEmitter<string> = new EventEmitter<string>();
@@ -26,7 +27,6 @@ export class PickerComponent implements OnInit, AfterViewInit {
   pickerHeightLight: number = 0;
 
   bgColor: string = '#000000';
-  formula: string = 'x';
 
   constructor(
     private colorService: ColorService
@@ -34,6 +34,7 @@ export class PickerComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
   }
+
   ngAfterViewInit(): void {
     this.pickerWidthSat = this.divPickerbox?.nativeElement.clientWidth;
     this.pickerHeightLight = this.divPickerbox?.nativeElement.clientHeight;
@@ -48,11 +49,10 @@ export class PickerComponent implements OnInit, AfterViewInit {
 
   preview(e: Event) {
     e.preventDefault();
-    console.log('preview');
     this.change.emit(this.bgColor);
   }
 
-  setFormula() {
+  setFormula(): string {
     return `hsl(${this.color.hue}, ${this.color.saturation}%, ${this.color.lightness}%)`;
   }
 }
