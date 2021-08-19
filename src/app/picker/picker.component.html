@@ -1,1 +1,14 @@
-<p>picker works!</p>
+<div class="picker">
+    <form>
+        <div class="pickerbox" #pickerbox (click)="pickColor($event)">
+            <div class="pickerbox-main-color"></div>
+            <div class="pickerbox-gradient-saturation overlay"></div>
+            <div class="pickerbox-gradient-lightness overlay"></div>
+        </div>
+        <div class="pickedbox" [ngStyle]="{'background-color': bgColor}">
+        </div>
+        <div class="formulabox">
+            hsl({{hue}}, {{sat}}%, {{light}}%)
+        </div>
+    </form>
+</div>

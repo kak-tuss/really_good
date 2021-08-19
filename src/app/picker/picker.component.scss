@@ -1,0 +1,50 @@
+.picker {
+    width: 420px;
+    height: 586px;
+    margin: 0 27px 0 0;
+    padding: 27px 17px 17px 21px;
+    background-color: #d8d8d8;
+
+    .pickerbox {
+        width: 404px;
+        height: 404px;
+        margin-bottom: 13px;
+        div {
+            width: 404px;
+            height: 404px;
+            &.overlay {
+                float: left;
+                margin-top: -404px;
+            }
+        }
+    }
+    .pickerbox-main-color {
+        background-color: #6633cc;
+    
+    }
+    .pickerbox-gradient-saturation {
+        background: linear-gradient(to left, hsla(260, 0%, 50%, 1),hsla(260, 20%, 50%, 1),hsla(260, 40%, 50%, 1),hsla(260, 60%, 50%, 1),hsla(260, 80%, 50%, 1),hsla(260, 100%, 50%, 1));
+        background: -moz-linear-gradient(left, hsla(260, 0%, 50%, 1),hsla(260, 20%, 50%, 1),hsla(260, 40%, 50%, 1),hsla(260, 60%, 50%, 1),hsla(260, 80%, 50%, 1),hsla(260, 100%, 50%, 1));
+    }
+    .pickerbox-gradient-lightness {
+        background: linear-gradient(to bottom, hsla(260, 50%, 100%, 1),hsla(260, 50%, 50%, 0.5),hsla(260, 50%, 0, 1));
+        background: -moz-linear-gradient(bottom, hsla(260, 50%, 100%, 1),hsla(260, 50%, 50%, 0.5),hsla(260, 50%, 0, 1));
+    }
+    
+    .pickedbox {
+        width: 98px;
+        height: 44px;
+        margin-right: 12px;
+        border: 1px solid #000;
+        float: left;
+    }
+
+    .formulabox {
+        width: 290px;
+        height: 44px;
+        line-height: 44px;
+        background-color: #fff;
+        border: 1px solid #000;
+        float: left;
+    }
+}
