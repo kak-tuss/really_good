@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { HSLColor } from '../picker/picker.component';
 
 @Component({
   selector: 'app-preview',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./preview.component.scss']
 })
 export class PreviewComponent implements OnInit {
+  @Input() color: string = "#000000";
 
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

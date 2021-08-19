@@ -1,8 +1,27 @@
 .preview {
-    width: 412px;
-    height: 386px;
-    margin: 0 0 0 27px;
-    padding: 95px 91px 96px 92px;
-    box-shadow: inset 28px 28px 6px 0 #00000066;
-    border: solid 27px #d8d8d8;
+    width: 595px;
+    height: 576px;
+    background-image: url('../../assets/shirt.svg'), url('../../assets/checkerboard.svg');
+    background: url('../../assets/shirt.svg') center center no-repeat, url('../../assets/checkerboard.svg') left top repeat;
+    background-size: 466px, auto;
+    box-shadow: inset 2px 2px 6px 0 #00000066;
+    border: 27px solid #d8d8d8;
+
+    .logo {
+        display: block;
+        width: 122px;
+        height: 139px;
+        margin: 161px auto 0;
+    }
+
+    div.logo {
+        -webkit-mask: url('../../assets/hexagonmask.svg') no-repeat center / contain;
+        mask: url('../../assets/hexagonmask.svg') no-repeat center / contain;
+    }
+
+    div.logo-r {
+        height: 139px;
+        background-color: #ffffff;
+        mask: url('../../assets/reallygood.svg') no-repeat center / contain;
+    }
 }

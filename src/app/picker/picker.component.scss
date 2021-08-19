@@ -1,8 +1,8 @@
 .picker {
-    width: 420px;
+    width: 404px;
     height: 586px;
     margin: 0 27px 0 0;
-    padding: 27px 17px 17px 21px;
+    padding: 27px 27px 17px 27px;
     background-color: #d8d8d8;
 
     .pickerbox {
@@ -40,11 +40,21 @@
     }
 
     .formulabox {
-        width: 290px;
-        height: 44px;
-        line-height: 44px;
+        width: 274px;
+        height: 43px;
+        line-height: 43px;
         background-color: #fff;
         border: 1px solid #000;
         float: left;
+
+        font-family: 'Roboto Slab', serif;
+        font-size: 27px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #000;
+        padding-left: 10px;
     }
 }

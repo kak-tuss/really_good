@@ -1,5 +1,11 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { ColorService } from '../color.service';
+
+export interface HSLColor {
+  hue: number,
+  saturation: number,
+  lightness: number
+}
 
 @Component({
   selector: 'app-picker',
@@ -8,13 +14,19 @@ import { ColorService } from '../color.service';
 })
 export class PickerComponent implements OnInit, AfterViewInit {
   @ViewChild('pickerbox', { static: false }) divPickerbox!: ElementRef;
+  @Output() change: EventEmitter<string> = new EventEmitter<string>();
   
-  hue: number = 260;
+  color: HSLColor = {
+    hue: 260,
+    saturation: 0,
+    lightness: 0
+  }
+
   pickerWidthSat: number = 0;
   pickerHeightLight: number = 0;
-  sat: number = 0;
-  light: number = 0;
+
   bgColor: string = '#000000';
+  formula: string = 'x';
 
   constructor(
     private colorService: ColorService
@@ -23,22 +35,19 @@ export class PickerComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
   }
   ngAfterViewInit(): void {
-    console.log(this.divPickerbox);
     this.pickerWidthSat = this.divPickerbox?.nativeElement.clientWidth;
     this.pickerHeightLight = this.divPickerbox?.nativeElement.clientHeight;
   }
 
-
   pickColor(e: Event) {
-    console.log(this.pickerWidthSat, this.pickerHeightLight);
-    console.log((<MouseEvent>e).offsetX, (<MouseEvent>e).offsetY);
+    this.color.saturation = 100 - Math.round((<MouseEvent>e).offsetX / this.pickerWidthSat * 100);
+    this.color.lightness = 100 - Math.round((<MouseEvent>e).offsetY / this.pickerHeightLight * 100);
 
-    this.sat = 100 - Math.round((<MouseEvent>e).offsetX / this.pickerWidthSat * 100);
-    this.light = 100 - Math.round((<MouseEvent>e).offsetY / this.pickerHeightLight * 100);
-
-    this.bgColor = this.colorService.convertHSLToHex(this.hue, this.sat, this.light);
-        
-
+    this.bgColor = this.colorService.convertHSLToHex(this.color.hue, this.color.saturation, this.color.lightness);
+    console.log('should be emitting ', this.bgColor);
+    this.change.emit(this.bgColor);
   }
+
+  setFormula = () => `hsl(${this.color.hue}, ${this.color.saturation}%, ${this.color.lightness}%)`;
 
 }

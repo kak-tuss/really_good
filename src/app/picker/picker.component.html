@@ -7,8 +7,6 @@
         </div>
         <div class="pickedbox" [ngStyle]="{'background-color': bgColor}">
         </div>
-        <div class="formulabox">
-            hsl({{hue}}, {{sat}}%, {{light}}%)
-        </div>
+        <input class="formulabox" type="text" [value]="setFormula()" disabled />
     </form>
 </div>

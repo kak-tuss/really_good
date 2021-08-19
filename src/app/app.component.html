@@ -1,8 +1,9 @@
 <div class="flex-container">
   <div class="flex-item">
-    <app-picker></app-picker>
+    <app-picker (change)="pickerChange($event)"></app-picker>
   </div>
+
   <div class="flex-item">
-    <app-preview></app-preview>
+    <app-preview [color]="selectedColor"></app-preview>
   </div>
 </div>
