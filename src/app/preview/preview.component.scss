@@ -14,12 +14,12 @@
         margin: 161px auto 0;
     }
 
-    div.logo {
+    .logo-hex {
         -webkit-mask: url('../../assets/hexagonmask.svg') no-repeat center / contain;
         mask: url('../../assets/hexagonmask.svg') no-repeat center / contain;
     }
 
-    div.logo-r {
+    .logo-r {
         height: 139px;
         background-color: #ffffff;
         mask: url('../../assets/reallygood.svg') no-repeat center / contain;
